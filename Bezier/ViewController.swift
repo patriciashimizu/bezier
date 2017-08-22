@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
+        angle.text = String(0.0)
+        angle.textColor = UIColor.darkGray
         fillArrayOfAngles()
     }
     //------------------------------------
