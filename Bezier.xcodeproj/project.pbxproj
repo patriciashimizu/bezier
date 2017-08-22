@@ -24,6 +24,7 @@
 		9BFDE90C1F4C7270007DC595 /* Icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFDE9021F4C7270007DC595 /* Icon-152.png */; };
 		9BFDE90D1F4C7270007DC595 /* Icon-167.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFDE9031F4C7270007DC595 /* Icon-167.png */; };
 		9BFDE90E1F4C7270007DC595 /* Icon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFDE9041F4C7270007DC595 /* Icon-180.png */; };
+		9BFDE9111F4CA391007DC595 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFDE9101F4CA391007DC595 /* Math.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9BFDE9021F4C7270007DC595 /* Icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-152.png"; sourceTree = "<group>"; };
 		9BFDE9031F4C7270007DC595 /* Icon-167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-167.png"; sourceTree = "<group>"; };
 		9BFDE9041F4C7270007DC595 /* Icon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-180.png"; sourceTree = "<group>"; };
+		9BFDE9101F4CA391007DC595 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,22 @@
 		0083BCED1F48E3E100A4B460 /* Bezier */ = {
 			isa = PBXGroup;
 			children = (
+				9BFDE90F1F4C7545007DC595 /* images */,
+				9BFDE8F91F4C703F007DC595 /* Chalkduster.ttf */,
+				0083BCEE1F48E3E100A4B460 /* AppDelegate.swift */,
+				0083BCF01F48E3E100A4B460 /* ViewController.swift */,
+				0083BD021F48F21600A4B460 /* BezierShape.swift */,
+				0083BCF21F48E3E100A4B460 /* Main.storyboard */,
+				0083BCF51F48E3E100A4B460 /* Assets.xcassets */,
+				0083BCFA1F48E3E100A4B460 /* Info.plist */,
+				9BFDE9101F4CA391007DC595 /* Math.swift */,
+			);
+			path = Bezier;
+			sourceTree = "<group>";
+		};
+		9BFDE90F1F4C7545007DC595 /* images */ = {
+			isa = PBXGroup;
+			children = (
 				9BFDE8FB1F4C7270007DC595 /* Icon-29.png */,
 				9BFDE8FC1F4C7270007DC595 /* Icon-40.png */,
 				9BFDE8FD1F4C7270007DC595 /* Icon-58.png */,
@@ -88,16 +106,9 @@
 				9BFDE9021F4C7270007DC595 /* Icon-152.png */,
 				9BFDE9031F4C7270007DC595 /* Icon-167.png */,
 				9BFDE9041F4C7270007DC595 /* Icon-180.png */,
-				9BFDE8F91F4C703F007DC595 /* Chalkduster.ttf */,
 				0083BD001F48F09100A4B460 /* circle.png */,
-				0083BCEE1F48E3E100A4B460 /* AppDelegate.swift */,
-				0083BCF01F48E3E100A4B460 /* ViewController.swift */,
-				0083BD021F48F21600A4B460 /* BezierShape.swift */,
-				0083BCF21F48E3E100A4B460 /* Main.storyboard */,
-				0083BCF51F48E3E100A4B460 /* Assets.xcassets */,
-				0083BCFA1F48E3E100A4B460 /* Info.plist */,
 			);
-			path = Bezier;
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				0083BCF11F48E3E100A4B460 /* ViewController.swift in Sources */,
 				0083BD031F48F21600A4B460 /* BezierShape.swift in Sources */,
 				0083BCEF1F48E3E100A4B460 /* AppDelegate.swift in Sources */,
+				9BFDE9111F4CA391007DC595 /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

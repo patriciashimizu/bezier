@@ -11,12 +11,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var defaultX: CGFloat!
     var defaultY: CGFloat!
     var arrayOfAngles: [Double] = []
+    let mathObj: Math = Math()
     //------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         angle.text = String(0.0)
         angle.textColor = UIColor.darkGray
         fillArrayOfAngles()
+        //print(mathObj.returnValue("+", [5, 10]))
     }
     //------------------------------------
     override func viewDidAppear(_ animated: Bool) {
@@ -47,8 +49,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         let angleInDegrees: Double = Double(angle.text!)!
         steps = steps + 1
-        xPos = xPos + CGFloat(__cospi(angleInDegrees/180.0)) / 500
-        yPos = yPos + CGFloat(__sinpi(angleInDegrees/180.0)) / 500
+        //xPos = xPos + CGFloat(__cospi(angleInDegrees/180.0)) / 500
+        //yPos = yPos + CGFloat(__sinpi(angleInDegrees/180.0)) / 500
+        xPos = xPos + CGFloat(mathObj.returnValue("cos", [angleInDegrees/180.0])) / 500
+        yPos = yPos + CGFloat(mathObj.returnValue("sin", [angleInDegrees/180.0])) / 500
+
         shape.center.x += xPos
         shape.center.y += yPos
     }
@@ -59,6 +64,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         shape.center.x = defaultX
         shape.center.y = defaultY
         steps = 0
+        
+        // Aponta o trinagulo para a direçao do angulo!
+        let angleDegrees: Double = Double(angle.text!)!
+        let angleInRadians = CGFloat(angleDegrees * Double.pi/180.0) + CGFloat(90 * Double.pi/180.0)
+        shape.transform = CGAffineTransform(rotationAngle: angleInRadians)
+        
+        
         timer = Timer.scheduledTimer(timeInterval: 0.005, target: self,
                                      selector: (#selector(ViewController.sinCosAnimation)),
                                      userInfo: nil, repeats: true)
@@ -69,7 +81,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     //------------------------------------
     @IBAction func randomAngle(_ sender: UIButton) {
-        let randomAngle = arc4random_uniform(UInt32(arrayOfAngles.count))
+        //let randomAngle = arc4random_uniform(UInt32(arrayOfAngles.count))
+        let randomAngle = mathObj.returnValue("rand", [Double(arrayOfAngles.count)])
         angle.text = String(arrayOfAngles[Int(randomAngle)])
     }
     //------------------------------------
