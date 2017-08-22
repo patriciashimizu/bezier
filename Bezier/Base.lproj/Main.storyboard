@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,9 +30,12 @@
                                     <constraint firstAttribute="height" constant="300" id="Q8S-5w-f7v"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ANGLE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LgM-D3-6bd">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ANGLE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LgM-D3-6bd">
                                 <rect key="frame" x="139" y="367" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LgM-D3-6bd" secondAttribute="height" multiplier="97:30" id="Sl5-89-RGF"/>
+                                    <constraint firstAttribute="width" constant="97" id="imV-B8-eTk"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -38,10 +43,13 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="F5b-My-ZS7"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ev-vb-Jhi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ev-vb-Jhi">
                                 <rect key="frame" x="251" y="369" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.63791637140000002" blue="0.63513698169999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="EsO-ot-ha4"/>
+                                    <constraint firstAttribute="width" secondItem="0ev-vb-Jhi" secondAttribute="height" multiplier="97:30" id="ZQz-Ia-Wrw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
                                 <state key="normal" title="ANIMATE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,10 +58,13 @@
                                     <action selector="animate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hdR-8S-ZEu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djj-yj-W9o">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djj-yj-W9o">
                                 <rect key="frame" x="23" y="369" width="95" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.63791637140000002" blue="0.63513698169999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="Nzi-KO-AYQ"/>
+                                    <constraint firstAttribute="width" secondItem="Djj-yj-W9o" secondAttribute="height" multiplier="95:26" id="aWa-IG-oVZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="13"/>
                                 <state key="normal" title="NEW ANGLE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,10 +73,23 @@
                                     <action selector="randomAngle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tJG-Cx-Oe8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mye-cb-Co5">
-                                <rect key="frame" x="109" y="414" width="157" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEZIER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eop-Yx-Vv2">
+                                <rect key="frame" x="55" y="462" width="264" height="154"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="154" id="XqA-4G-kg4"/>
+                                    <constraint firstAttribute="width" constant="264" id="cZf-KD-EZf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="60"/>
+                                <color key="textColor" red="0.091932295850751827" green="0.2874860995184107" blue="0.50196081400000003" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mye-cb-Co5">
+                                <rect key="frame" x="109" y="405" width="157" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="a1J-6D-xLy"/>
+                                    <constraint firstAttribute="height" constant="29" id="fqb-2G-5EJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <state key="normal" title="HIDE KEYBOARD">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -76,8 +100,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="0ev-vb-Jhi" firstAttribute="top" secondItem="DZg-KE-CFD" secondAttribute="bottom" constant="29" id="1Th-1T-q4m"/>
+                            <constraint firstItem="eop-Yx-Vv2" firstAttribute="top" secondItem="Mye-cb-Co5" secondAttribute="bottom" constant="28" id="6IH-4D-wfc"/>
+                            <constraint firstItem="LgM-D3-6bd" firstAttribute="top" secondItem="DZg-KE-CFD" secondAttribute="bottom" constant="27" id="8RX-V6-adv"/>
+                            <constraint firstItem="0ev-vb-Jhi" firstAttribute="leading" secondItem="LgM-D3-6bd" secondAttribute="trailing" constant="15" id="90K-q4-3FB"/>
+                            <constraint firstItem="Mye-cb-Co5" firstAttribute="top" secondItem="LgM-D3-6bd" secondAttribute="bottom" constant="8" id="B0R-Bs-fW7"/>
                             <constraint firstItem="DZg-KE-CFD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B2V-Fq-H5x"/>
+                            <constraint firstItem="Djj-yj-W9o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="Ft7-mL-xac"/>
                             <constraint firstItem="DZg-KE-CFD" firstAttribute="top" secondItem="YOP-Dl-rlp" secondAttribute="bottom" constant="20" id="RCR-Mq-ZEe"/>
+                            <constraint firstItem="eop-Yx-Vv2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RTz-30-kZQ"/>
+                            <constraint firstItem="Djj-yj-W9o" firstAttribute="top" secondItem="DZg-KE-CFD" secondAttribute="bottom" constant="29" id="aNm-oA-Uxh"/>
+                            <constraint firstItem="Mye-cb-Co5" firstAttribute="top" secondItem="0ev-vb-Jhi" secondAttribute="bottom" constant="6" id="cze-N8-JWV"/>
+                            <constraint firstItem="Mye-cb-Co5" firstAttribute="top" secondItem="Djj-yj-W9o" secondAttribute="bottom" constant="10" id="fkv-i4-vRL"/>
+                            <constraint firstItem="LgM-D3-6bd" firstAttribute="leading" secondItem="Djj-yj-W9o" secondAttribute="trailing" constant="21" id="txe-0P-yw3"/>
+                            <constraint firstItem="UL9-a7-egj" firstAttribute="top" secondItem="eop-Yx-Vv2" secondAttribute="bottom" constant="51" id="vzK-t6-jn7"/>
+                            <constraint firstItem="Mye-cb-Co5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yGD-dk-NA0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0ev-vb-Jhi" secondAttribute="trailing" constant="11" id="yVG-hO-4Aj"/>
                         </constraints>
                     </view>
                     <connections>
